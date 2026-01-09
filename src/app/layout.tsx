@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { ThemeProvider } from '../components/ThemeContext';
+import ColorPaletteSelector from '../components/ColorPaletteSelector';
 import businessData from '../data/business_details.json';
 
 export const metadata: Metadata = {
@@ -30,11 +32,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className="antialiased min-h-screen flex flex-col font-sans">
-        <Header />
-        <main className="flex-grow">
-          {children}
-        </main>
-        <Footer />
+        <ThemeProvider>
+          <Header />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer />
+          <ColorPaletteSelector />
+        </ThemeProvider>
       </body>
     </html>
   );
