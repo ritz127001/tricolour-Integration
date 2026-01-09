@@ -179,7 +179,7 @@ export default function AboutPage() {
             Ready to Work With Us?
           </h2>
           <p className="text-lg text-text-muted max-w-2xl mx-auto mb-10">
-            Join the growing list of organizations that trust Tricolour Integration for their technology needs.
+            Join the growing list of organizations that trust {businessData.companyName} for their technology needs.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/contact" className="btn-primary text-lg px-8 py-4">

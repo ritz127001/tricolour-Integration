@@ -28,7 +28,7 @@ export default function ContactPage() {
     await new Promise((resolve) => setTimeout(resolve, 1500));
     
     // In a real application, you would send this data to your backend
-    console.log('Form submitted:', formData);
+    // Form data is ready to be sent to an API endpoint
     
     setIsSubmitting(false);
     setSubmitStatus('success');

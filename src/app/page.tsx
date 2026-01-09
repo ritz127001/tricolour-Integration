@@ -258,7 +258,7 @@ export default function Home() {
             Ready to Transform Your Business?
           </h2>
           <p className="text-lg text-text-muted max-w-2xl mx-auto mb-10">
-            Let&apos;s discuss how Tricolour Integration can help you achieve your technology goals. Our team of experts is ready to help.
+            Let&apos;s discuss how {businessData.companyName} can help you achieve your technology goals. Our team of experts is ready to help.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/contact" className="btn-primary text-lg px-8 py-4">
