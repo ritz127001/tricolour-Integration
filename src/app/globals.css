@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1e3a5f;
+  --color-primary-dark: #0f2744;
+  --color-primary-light: #2c5282;
+  --color-secondary: #c9a227;
+  --color-accent: #4299e1;
+  --color-dark: #0a1628;
+  --color-dark-lighter: #1a2d45;
+  --color-text-light: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  
+  --font-family-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: var(--font-family-sans);
+    background-color: var(--color-dark);
+    color: var(--color-text-light);
+  }
+  
+  ::selection {
+    background-color: var(--color-secondary);
+    color: var(--color-dark);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 bg-secondary text-dark font-semibold rounded-lg transition-all duration-300 hover:bg-yellow-400 hover:shadow-lg hover:shadow-secondary/25 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-dark;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 border-2 border-secondary text-secondary font-semibold rounded-lg transition-all duration-300 hover:bg-secondary hover:text-dark focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-dark;
+  }
+  
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-text-light mb-4;
+  }
+  
+  .section-subtitle {
+    @apply text-lg text-text-muted max-w-3xl;
+  }
+  
+  .card {
+    @apply bg-dark-lighter rounded-xl border border-gray-800 p-6 transition-all duration-300 hover:border-secondary/50 hover:shadow-xl hover:shadow-secondary/5;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-secondary via-yellow-400 to-secondary bg-clip-text text-transparent;
+  }
+  
+  .nav-link {
+    @apply relative text-text-light hover:text-secondary transition-colors duration-300 font-medium;
+  }
+  
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-secondary transition-all duration-300;
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-light);
+}
