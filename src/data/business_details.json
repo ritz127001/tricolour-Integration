@@ -1,0 +1,197 @@
+{
+  "companyName": "Tricolour Integration",
+  "tagline": "Innovating Tomorrow's Technology Today",
+  "description": "Tricolour Integration is a premier technology solutions provider based in Delhi, India. We specialize in delivering cutting-edge integration services, advanced systems engineering, and innovative technology solutions for defense, aerospace, and industrial sectors.",
+  "mission": "To deliver world-class technology solutions that empower organizations to achieve their strategic objectives through innovation, precision engineering, and unwavering commitment to excellence.",
+  "vision": "To be the most trusted technology partner in India, recognized for our expertise in systems integration, advanced engineering solutions, and transformative digital innovations.",
+  "values": [
+    {
+      "title": "Innovation",
+      "description": "Continuously pushing boundaries to develop cutting-edge solutions"
+    },
+    {
+      "title": "Excellence",
+      "description": "Maintaining the highest standards in everything we do"
+    },
+    {
+      "title": "Integrity",
+      "description": "Building trust through transparent and ethical practices"
+    },
+    {
+      "title": "Collaboration",
+      "description": "Working together to achieve extraordinary results"
+    }
+  ],
+  "services": [
+    {
+      "id": "systems-integration",
+      "title": "Systems Integration",
+      "description": "Comprehensive systems integration services that seamlessly connect diverse technologies and platforms for optimal performance and efficiency.",
+      "icon": "integration",
+      "features": [
+        "Enterprise System Integration",
+        "Platform Modernization",
+        "API Development & Integration",
+        "Data Integration Solutions"
+      ]
+    },
+    {
+      "id": "defense-solutions",
+      "title": "Defense Solutions",
+      "description": "Advanced defense technology solutions designed to meet the stringent requirements of modern warfare and national security.",
+      "icon": "shield",
+      "features": [
+        "Command & Control Systems",
+        "Surveillance Solutions",
+        "Communication Systems",
+        "Tactical Equipment"
+      ]
+    },
+    {
+      "id": "aerospace-engineering",
+      "title": "Aerospace Engineering",
+      "description": "Precision aerospace engineering services supporting aircraft systems, satellite technologies, and space exploration initiatives.",
+      "icon": "aircraft",
+      "features": [
+        "Aircraft Systems",
+        "Avionics Integration",
+        "Satellite Solutions",
+        "Ground Support Equipment"
+      ]
+    },
+    {
+      "id": "industrial-automation",
+      "title": "Industrial Automation",
+      "description": "Smart automation solutions that transform manufacturing processes and enhance operational efficiency across industries.",
+      "icon": "automation",
+      "features": [
+        "Process Automation",
+        "Robotics Integration",
+        "IoT Solutions",
+        "Smart Manufacturing"
+      ]
+    },
+    {
+      "id": "consulting",
+      "title": "Technology Consulting",
+      "description": "Strategic technology consulting services that help organizations navigate digital transformation and achieve their business goals.",
+      "icon": "consulting",
+      "features": [
+        "Digital Strategy",
+        "Technology Assessment",
+        "Implementation Planning",
+        "Change Management"
+      ]
+    },
+    {
+      "id": "maintenance",
+      "title": "Maintenance & Support",
+      "description": "Comprehensive maintenance and support services ensuring optimal performance and longevity of critical systems.",
+      "icon": "support",
+      "features": [
+        "Preventive Maintenance",
+        "24/7 Technical Support",
+        "System Upgrades",
+        "Performance Optimization"
+      ]
+    }
+  ],
+  "stats": [
+    {
+      "value": "15+",
+      "label": "Years of Excellence"
+    },
+    {
+      "value": "500+",
+      "label": "Projects Delivered"
+    },
+    {
+      "value": "100+",
+      "label": "Expert Engineers"
+    },
+    {
+      "value": "50+",
+      "label": "Industry Partners"
+    }
+  ],
+  "certifications": [
+    "ISO 9001:2015",
+    "ISO 27001:2013",
+    "AS9100D",
+    "CMMI Level 3"
+  ],
+  "clients": [
+    "Defense Organizations",
+    "Aerospace Companies",
+    "Government Agencies",
+    "Manufacturing Industries"
+  ],
+  "history": [
+    {
+      "year": "2009",
+      "title": "Foundation",
+      "description": "Tricolour Integration was established in Delhi with a vision to provide world-class technology solutions."
+    },
+    {
+      "year": "2012",
+      "title": "Defense Sector Entry",
+      "description": "Expanded operations to serve the defense sector with specialized integration solutions."
+    },
+    {
+      "year": "2015",
+      "title": "ISO Certification",
+      "description": "Achieved ISO 9001 and ISO 27001 certifications, reinforcing our commitment to quality."
+    },
+    {
+      "year": "2018",
+      "title": "Aerospace Division",
+      "description": "Launched dedicated aerospace engineering division to support aircraft and satellite systems."
+    },
+    {
+      "year": "2021",
+      "title": "Digital Transformation",
+      "description": "Introduced comprehensive digital transformation and Industry 4.0 solutions."
+    },
+    {
+      "year": "2024",
+      "title": "Regional Expansion",
+      "description": "Expanded presence across multiple regions with new facilities and enhanced capabilities."
+    }
+  ],
+  "contact": {
+    "address": "A-123, Industrial Area, Phase-2, New Delhi, India - 110020",
+    "phone": "+91 11 4567 8900",
+    "email": "info@tricolourintegration.com",
+    "workingHours": "Monday - Friday: 9:00 AM - 6:00 PM",
+    "socialMedia": [
+      {
+        "platform": "LinkedIn",
+        "url": "https://www.linkedin.com/company/tricolour-integration",
+        "icon": "linkedin"
+      },
+      {
+        "platform": "Twitter",
+        "url": "https://twitter.com/tricolour_int",
+        "icon": "twitter"
+      },
+      {
+        "platform": "Facebook",
+        "url": "https://www.facebook.com/tricolourintegration",
+        "icon": "facebook"
+      }
+    ]
+  },
+  "seo": {
+    "title": "Tricolour Integration | Technology Solutions & Systems Integration",
+    "description": "Tricolour Integration is a leading technology solutions provider in Delhi, offering systems integration, defense solutions, aerospace engineering, and industrial automation services.",
+    "keywords": [
+      "systems integration",
+      "technology solutions",
+      "defense technology",
+      "aerospace engineering",
+      "industrial automation",
+      "Delhi",
+      "India"
+    ]
+  }
+}
