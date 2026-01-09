@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import businessData from '../data/business_details.json';
+import ContactForm from '../components/ContactForm';
+import VideoBackground from '../components/VideoBackground';
 
 // Icons for services
 const ServiceIcon = ({ type }: { type: string }) => {
@@ -42,61 +44,93 @@ const ServiceIcon = ({ type }: { type: string }) => {
 export default function Home() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-        {/* Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-dark via-primary-dark to-dark" />
+      {/* Hero Section with Contact Form and Video */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-16">
+        {/* Background with Video/Image */}
+        <div className="absolute inset-0 bg-gradient-to-br from-dark via-primary-dark to-dark">
+          {/* Background Image Overlay */}
+          <div 
+            className="absolute inset-0 opacity-20"
+            style={{
+              backgroundImage: "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072')",
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          />
+        </div>
         
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl animate-pulse" />
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-1/3 right-1/3 w-64 h-64 border border-secondary/10 rounded-full animate-spin-slow" />
         </div>
 
         {/* Grid Pattern Overlay */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%2394a3b8%22%20fill-opacity%3D%220.03%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')] opacity-50" />
 
-        <div className="relative section-container text-center z-10">
-          <div className="max-w-4xl mx-auto">
-            {/* Company Badge */}
-            <div className="inline-flex items-center space-x-2 bg-dark-lighter border border-gray-700 rounded-full px-4 py-2 mb-8 animate-fade-in">
-              <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              <span className="text-text-muted text-sm">Trusted Technology Partner Since 2009</span>
-            </div>
-
-            {/* Main Heading */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-text-light mb-6 leading-tight animate-slide-up">
-              {businessData.companyName}
-              <span className="block gradient-text mt-2">{businessData.tagline}</span>
-            </h1>
-
-            {/* Description */}
-            <p className="text-lg md:text-xl text-text-muted max-w-3xl mx-auto mb-10 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-              {businessData.description}
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up" style={{ animationDelay: '0.4s' }}>
-              <Link href="/services" className="btn-primary text-lg px-8 py-4">
-                Explore Our Solutions
-                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-              <Link href="/about" className="btn-secondary text-lg px-8 py-4">
-                Learn More About Us
-              </Link>
-            </div>
-
-            {/* Stats Preview */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-16 border-t border-gray-800 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-              {businessData.stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold gradient-text">{stat.value}</div>
-                  <div className="text-text-muted text-sm mt-1">{stat.label}</div>
+        <div className="relative section-container z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Contact Form */}
+            <div className="order-2 lg:order-1">
+              <div className="max-w-xl">
+                {/* Company Badge */}
+                <div className="inline-flex items-center space-x-2 bg-dark-lighter/80 backdrop-blur border border-gray-700 rounded-full px-4 py-2 mb-6 animate-fade-in">
+                  <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                  <span className="text-text-muted text-sm">Trusted Technology Partner Since 2009</span>
                 </div>
-              ))}
+
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-light mb-4 leading-tight animate-fade-in-up">
+                  {businessData.companyName}
+                  <span className="block gradient-text mt-2">{businessData.tagline}</span>
+                </h1>
+
+                <p className="text-base md:text-lg text-text-muted mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                  {businessData.description.slice(0, 150)}...
+                </p>
+
+                {/* Contact Form */}
+                <div className="animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+                  <ContactForm compact />
+                </div>
+              </div>
             </div>
+
+            {/* Right Side - Video Background */}
+            <div className="order-1 lg:order-2 h-[400px] lg:h-[600px] animate-slide-in-right">
+              <VideoBackground 
+                videoUrl="/videos/tech-background.mp4"
+                fallbackImageUrl="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070"
+                overlayOpacity={0.5}
+              >
+                <div className="text-center p-8">
+                  <div className="w-24 h-24 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-6 animate-float">
+                    <span className="text-4xl font-bold gradient-text">TI</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-text-light mb-2">Innovation in Motion</h3>
+                  <p className="text-text-muted text-sm">Watch our technology at work</p>
+                  
+                  {/* Play button for video hint */}
+                  <div className="mt-6 animate-bounce-subtle">
+                    <div className="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mx-auto border-2 border-secondary/50 hover:bg-secondary/30 transition-all cursor-pointer">
+                      <svg className="w-8 h-8 text-secondary ml-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </VideoBackground>
+            </div>
+          </div>
+
+          {/* Stats Preview */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-12 border-t border-gray-800 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+            {businessData.stats.map((stat, index) => (
+              <div key={index} className="text-center group">
+                <div className="text-3xl md:text-4xl font-bold gradient-text group-hover:animate-bounce-subtle">{stat.value}</div>
+                <div className="text-text-muted text-sm mt-1">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -109,8 +143,17 @@ export default function Home() {
       </section>
 
       {/* About Preview Section */}
-      <section className="py-24 bg-dark-lighter">
-        <div className="section-container">
+      <section className="py-24 bg-dark-lighter relative overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+        <div className="section-container relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-sm font-semibold text-secondary uppercase tracking-wide mb-4">About Us</h2>
@@ -174,8 +217,17 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="py-24 bg-dark">
-        <div className="section-container">
+      <section className="py-24 bg-dark relative overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+        <div className="section-container relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-sm font-semibold text-secondary uppercase tracking-wide mb-4">Our Expertise</h2>
             <h3 className="section-title">Comprehensive Technology Solutions</h3>
@@ -188,10 +240,10 @@ export default function Home() {
             {businessData.services.map((service, index) => (
               <div
                 key={service.id}
-                className="card group"
+                className="card group animate-fade-in-up hover:scale-105 hover:-translate-y-2 transition-all duration-300"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary mb-6 group-hover:bg-secondary group-hover:text-dark transition-all duration-300">
+                <div className="w-14 h-14 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary mb-6 group-hover:bg-secondary group-hover:text-dark group-hover:animate-bounce-subtle transition-all duration-300">
                   <ServiceIcon type={service.icon} />
                 </div>
                 <h4 className="text-xl font-semibold text-text-light mb-3">{service.title}</h4>
@@ -208,10 +260,10 @@ export default function Home() {
                 </ul>
                 <Link
                   href={`/services#${service.id}`}
-                  className="inline-flex items-center text-secondary hover:text-yellow-400 font-medium text-sm transition-colors"
+                  className="inline-flex items-center text-secondary hover:text-yellow-400 font-medium text-sm transition-colors group-hover:translate-x-1"
                 >
                   Learn More
-                  <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 ml-1 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>
@@ -231,8 +283,17 @@ export default function Home() {
       </section>
 
       {/* Certifications Section */}
-      <section className="py-16 bg-dark-lighter">
-        <div className="section-container">
+      <section className="py-16 bg-dark-lighter relative overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2070')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+        <div className="section-container relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-sm font-semibold text-secondary uppercase tracking-wide mb-4">Our Certifications</h2>
             <h3 className="section-title">Committed to Quality & Excellence</h3>
@@ -241,7 +302,8 @@ export default function Home() {
             {businessData.certifications.map((cert, index) => (
               <div
                 key={index}
-                className="bg-dark border border-gray-700 rounded-lg px-8 py-4 text-text-light font-medium hover:border-secondary transition-colors"
+                className="bg-dark border border-gray-700 rounded-lg px-8 py-4 text-text-light font-medium hover:border-secondary hover:scale-105 hover:shadow-lg hover:shadow-secondary/10 transition-all duration-300 animate-fade-in-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {cert}
               </div>
@@ -252,22 +314,31 @@ export default function Home() {
 
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-br from-primary to-primary-dark relative overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 opacity-15"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
         <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.05%22%3E%3Cpath%20d%3D%22M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')]" />
         <div className="section-container relative z-10 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-text-light mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-text-light mb-6 animate-fade-in-up">
             Ready to Transform Your Business?
           </h2>
-          <p className="text-lg text-text-muted max-w-2xl mx-auto mb-10">
+          <p className="text-lg text-text-muted max-w-2xl mx-auto mb-10 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
             Let&apos;s discuss how {businessData.companyName} can help you achieve your technology goals. Our team of experts is ready to help.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/contact" className="btn-primary text-lg px-8 py-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <Link href="/contact" className="btn-primary text-lg px-8 py-4 hover:scale-105 hover:shadow-lg hover:shadow-secondary/25 transition-all duration-300">
               Start Your Project
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
-            <Link href="/services" className="btn-secondary text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-primary">
+            <Link href="/services" className="btn-secondary text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-primary hover:scale-105 transition-all duration-300">
               Explore Solutions
             </Link>
           </div>
