@@ -60,10 +60,12 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const [currentPalette, setCurrentPalette] = useState<PaletteKey>('default');
 
   useEffect(() => {
-    // Load saved palette from localStorage
-    const savedPalette = localStorage.getItem('colorPalette') as PaletteKey;
-    if (savedPalette && colorPalettes[savedPalette]) {
-      setCurrentPalette(savedPalette);
+    // Load saved palette from localStorage (check for window to support SSR)
+    if (typeof window !== 'undefined') {
+      const savedPalette = localStorage.getItem('colorPalette') as PaletteKey;
+      if (savedPalette && colorPalettes[savedPalette]) {
+        setCurrentPalette(savedPalette);
+      }
     }
   }, []);
 
@@ -78,8 +80,10 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     root.style.setProperty('--color-secondary', palette.secondary);
     root.style.setProperty('--color-accent', palette.accent);
     
-    // Save to localStorage
-    localStorage.setItem('colorPalette', currentPalette);
+    // Save to localStorage (check for window to support SSR)
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('colorPalette', currentPalette);
+    }
   }, [currentPalette]);
 
   const setPalette = (palette: PaletteKey) => {

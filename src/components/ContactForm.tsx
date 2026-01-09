@@ -73,7 +73,7 @@ export default function ContactForm({ compact = false }: ContactFormProps) {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2.5 bg-dark border border-gray-700 rounded-lg text-text-light placeholder-text-muted focus:outline-none focus:border-secondary transition-all duration-300 text-sm"
+              className="w-full px-4 py-2.5 bg-dark border border-gray-700 rounded-lg text-text-light placeholder-text-muted focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/50 transition-all duration-300 text-sm"
               placeholder="John Doe"
             />
           </div>
@@ -89,7 +89,7 @@ export default function ContactForm({ compact = false }: ContactFormProps) {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2.5 bg-dark border border-gray-700 rounded-lg text-text-light placeholder-text-muted focus:outline-none focus:border-secondary transition-all duration-300 text-sm"
+              className="w-full px-4 py-2.5 bg-dark border border-gray-700 rounded-lg text-text-light placeholder-text-muted focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/50 transition-all duration-300 text-sm"
               placeholder="john@example.com"
             />
           </div>
@@ -106,7 +106,7 @@ export default function ContactForm({ compact = false }: ContactFormProps) {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full px-4 py-2.5 bg-dark border border-gray-700 rounded-lg text-text-light placeholder-text-muted focus:outline-none focus:border-secondary transition-all duration-300 text-sm"
+              className="w-full px-4 py-2.5 bg-dark border border-gray-700 rounded-lg text-text-light placeholder-text-muted focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/50 transition-all duration-300 text-sm"
               placeholder="+91 98765 43210"
             />
           </div>
@@ -120,7 +120,7 @@ export default function ContactForm({ compact = false }: ContactFormProps) {
               name="service"
               value={formData.service}
               onChange={handleChange}
-              className="w-full px-4 py-2.5 bg-dark border border-gray-700 rounded-lg text-text-light focus:outline-none focus:border-secondary transition-all duration-300 appearance-none cursor-pointer text-sm"
+              className="w-full px-4 py-2.5 bg-dark border border-gray-700 rounded-lg text-text-light focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/50 transition-all duration-300 appearance-none cursor-pointer text-sm"
             >
               <option value="">Select a service</option>
               {businessData.services.map((service) => (
@@ -143,7 +143,7 @@ export default function ContactForm({ compact = false }: ContactFormProps) {
             onChange={handleChange}
             required
             rows={compact ? 3 : 4}
-            className="w-full px-4 py-2.5 bg-dark border border-gray-700 rounded-lg text-text-light placeholder-text-muted focus:outline-none focus:border-secondary transition-all duration-300 resize-none text-sm"
+            className="w-full px-4 py-2.5 bg-dark border border-gray-700 rounded-lg text-text-light placeholder-text-muted focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/50 transition-all duration-300 resize-none text-sm"
             placeholder="Tell us about your project..."
           />
         </div>

@@ -22,7 +22,7 @@ export default function ColorPaletteSelector() {
 
       {/* Palette Selector Panel */}
       {isOpen && (
-        <div className="absolute bottom-16 right-0 bg-dark-lighter border border-gray-700 rounded-xl p-4 shadow-2xl min-w-[240px] animate-slide-up">
+        <div className="absolute bottom-16 right-0 bg-dark-lighter border border-gray-700 rounded-xl p-4 shadow-2xl min-w-[240px] animate-fade-in-up">
           <h3 className="text-text-light font-semibold mb-4 text-sm">Choose Color Palette</h3>
           <div className="space-y-2">
             {(Object.keys(palettes) as PaletteKey[]).map((key) => (
